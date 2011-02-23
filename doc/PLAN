@@ -1,0 +1,29 @@
+This is essentially an app for running a competition. It's only begin planned for one time use, but it could conceivably be made to be reused.
+
+Models
+  = Users
+    - Competitors
+      + Login
+      + Password
+      + Problems (Including individual completion status)
+      + Submitted files (should be tied to a problems)
+    - Admins
+      + All the choices that users have
+      + Ability to add, delete, modify problems
+      + Ability to add, delete, modify users
+        # Make sure to include a delete all so we can clean the system
+
+  = Problems
+    + Name
+    + Description
+    + Test cases (Example input and output)
+    + Perhaps attached files (so people can download the input and output test cases)
+
+Views
+  - Login page (homepage)
+  - User account page (change password, delete account)
+  - Account creation page
+  - Problem listing page (Names, whether the user has solved it or not)
+  - Page for each problem
+  - Table of group with problems completed
+  - Problem creation page
