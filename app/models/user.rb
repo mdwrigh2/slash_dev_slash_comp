@@ -3,12 +3,12 @@ class User < ActiveRecord::Base
   validates :username, :presence => true,
                        :length => { :minimum => 4 },
                        :uniqueness => true,
-                       :format => { :with => /[A-Za-z0-9]+/ }
+                       :format => { :with => /[A-Za-z0-9_-]+/ }
   validates :hashed_password, :presence => true
   validates :email_address, :presence => true
   validates :password, :presence => true
-  has_many :posts
-  has_many :comments, :through => :posts
+  has_many :problem_attempts
+  has_many :problems, :through => :problem_attempts
 
   attr_accessor :password
   attr_protected :id, :salt
