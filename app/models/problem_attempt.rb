@@ -1,3 +1,4 @@
+require 'digest/sha1'
 class ProblemAttempt < ActiveRecord::Base
   belongs_to :problem
   belongs_to :user
@@ -13,6 +14,7 @@ class ProblemAttempt < ActiveRecord::Base
     end
 
     self.file_hash = Digest::SHA1.hexdigest(source_data)
+    return nil
   end
 
       

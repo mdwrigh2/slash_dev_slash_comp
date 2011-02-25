@@ -10,7 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224162358) do
+ActiveRecord::Schema.define(:version => 20110225224712) do
+
+  create_table "problem_attempts", :force => true do |t|
+    t.string   "status"
+    t.string   "file_hash"
+    t.integer  "problem_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "problems", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "example"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -19,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110224162358) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_admin",        :default => false
   end
 
 end
