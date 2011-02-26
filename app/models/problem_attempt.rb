@@ -17,6 +17,12 @@ class ProblemAttempt < ActiveRecord::Base
 
     self.filename = filename
     file_location = "#{RAILS_ROOT}/public/upload/#{filename}"
+    i = 1
+    while File.exists?(file_location) do
+      self.filename = "#{i}_#{filename}"
+      file_location = "#{RAILS_ROOT}/public/upload/#{self.filename}"
+      i += 1
+    end
     output = File.new(file_location, "wb")
     output.write(source_data.read)
     output.close
