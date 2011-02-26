@@ -15,7 +15,7 @@ class ProblemAttemptsController < ApplicationController
 
   def download
     @attempt = ProblemAttempt.find(params[:id])
-    send_file("#{RAILS_ROOT}/public/upload/#{@attempt.filename}", :type => @attempt.filetype)
+    send_file("#{RAILS_ROOT}/public/upload/#{@attempt.filename}", :type => @attempt.filetype, :stream => true)
   end
 
   def waiting
