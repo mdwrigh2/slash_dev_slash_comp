@@ -1,4 +1,6 @@
 SlashDevSlashComp::Application.routes.draw do
+  get "home/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -10,9 +12,23 @@ SlashDevSlashComp::Application.routes.draw do
     collection do
       get 'waiting'
     end
+    member do
+      get 'download'
+    end
   end
 
-  resources :problems
+  resources :problems do
+    collection do
+      get 'all'
+      post 'update_problems'
+    end
+  end
+
+  resources :logins do
+    collection do
+      delete :destroy
+    end
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -60,7 +76,7 @@ SlashDevSlashComp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,209 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v1.0 | 20080212 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,button{margin:0;padding:0;border:0 none;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
+/* /reset */
+
+ol, ul {list-style: none; }
+
+
+
+#wrapper {
+  margin: 50px;
+  margin-top: 0px;
+}
+
+
+nav {
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px
+  list-style: none;
+}
+nav ul {
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  float: left;
+}
+
+nav li a {
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  outline: 0 none;
+  line-height: 16px;
+  margin: 5px 15px 5px 15px;
+  color: black;
+}
+
+nav li a:hover {
+  padding-bottom: 3px;
+  border-bottom: 2px solid black;
+}
+
+#title {
+  font-family: Inconsolata, "Century Gothic", Courier, Impact, Charcoal, sans-serif;
+  font-size: 45px;
+}
+
+h1 {
+  padding 20px;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+#header {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  overflow: hidden;
+  margin: 20px;
+}
+
+#content {
+  font-family: Georgia, verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#content h1 {
+  font-size: 25px;
+  line-height: 30px;
+  color: #333;
+}
+
+.post_title {
+  font-size: 19px;
+  font-weight:bold;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 5px;
+}
+
+.post_title a {
+  text-decoration: none;
+  outline: 0 none;
+  margin: 0px;
+  padding: 0;
+}
+
+
+.post_title a:visited {
+  color: black;
+}
+
+.post_title a:hover {
+  border-bottom: 2px solid black;
+}
+
+.author_date {
+  font-size: 0.7em;
+  color: gray;
+  text-decoration: none;
+  padding-left: 7px;
+}
+
+.author_date a {
+  text-decoration: none;
+  color:black;
+}
+
+.author_date a:visited {
+  color:black;
+}
+
+.author_date a:hover {
+  border-bottom: 1px solid black;
+}
+
+#content p {
+  padding: 0px;
+  margin: 0px;
+  padding-left: 15px;
+}
+
+article {
+  padding: 1em;
+}
+
+#login {
+  margin-bottom: 25px;
+  font-weight: none;
+  padding-top: 0px;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 0px;
+}
+
+#login a {
+  color: black;
+  font-weight: none;
+  text-decoration: underline;
+}
+
+#login a:hover {
+  color:white;
+  background-color: black;
+}
+
+body {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.bottom_line {
+  font-size: 9px;
+  color: gray;
+  padding-left: 7px;
+  padding-top: 7px;
+  border-bottom: 1px dotted gray;
+  margin-right: 12px;
+}
+
+.bottom_line .edit_delete {
+  float:right;
+}
+
+.bottom_line .edit_delete a {
+  text-decoration: none;
+  color: black;
+}
+
+.bottom_line .edit_delete a:hover {
+  border-bottom: 1px solid black;
+}
+
+.error {
+  color: red;
+}
+
+.notice {
+  color: green;
+}
+
+table {
+  margin-top: 5px;
+}
+td { 
+  padding: 7px;
+}
+th {
+  padding-left:3px;
+  padding-right:3px;
+}
+
+#results {
+  margin-top: 20px;
+}

@@ -1,0 +1,39 @@
+<h1>Visible Problems</h1>
+<% if !@visible_problems.empty? %>
+  <% form_tag :action => :update_problems, :method => :put do %>
+    <table>
+      <th>Make Invisible?</th>
+      <th>Problem Title</th>
+      <% for problem in @visible_problems %>
+        <tr>
+          <td><%= check_box_tag "hidden_ids[]", problem.id %></td>
+          <td><%= link_to problem.title, problem_path(problem) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= submit_tag "Update Problems" %>
+  <% end %>
+<% end %>
+
+<% if @visible_problems.empty? %>
+  <h2>No visible problems</h2>
+<% end %>
+<h1>Hidden Problems</h1>
+<% if !@hidden_problems.empty? %>
+  <% form_tag :action => :update_problems, :method => :put do %>
+    <table>
+      <th>Make Visible?</th>
+      <th>Problem Title</th>
+      <% for problem in @hidden_problems %>
+        <tr>
+          <td><%= check_box_tag "visible_ids[]", problem.id %></td>
+          <td><%= link_to problem.title, problem_path(problem) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= submit_tag "Update Problems" %>
+  <% end %>
+<% end %>
+<% if @hidden_problems.empty? %>
+  <h2>No hidden problems</h2>
+<% end %>

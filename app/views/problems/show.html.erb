@@ -1,0 +1,45 @@
+<h1> <%= @problem.title %> </h1>
+<div id="problem_description">
+  <h2> Description </h2>
+  <%= raw(h(@problem.description).gsub("\n","<br />"))%>
+  <h2> Example </h2>
+  <%= raw(h(@problem.example).gsub("\n","<br />"))%>
+</div>
+<br />
+<h1>Submission</h1>
+<div id="submission">
+  <%= form_for @problem_attempt, :html => {:multipart => true } do |f| %>
+    <% if @problem_attempt.errors.any? %>
+      <div id="errorExplanation">
+        <h3><%= pluralize(@problem_attempt.errors.count, "error") %> prohibited your code from being uploaded: </h3>
+        <ul>
+          <% @problem_attempt.errors.full_messages.each do |msg| %>
+            <li<5= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= hidden_field_tag 'problem_id', @problem.id %>
+      <%= f.file_field :source_code %><br /><br />
+      <span class="actions"><%= f.submit 'Submit' %></span>
+    </div>
+  <% end %>
+</div>
+<% if !@attempts.empty? %>
+  <div id="results">
+    <h1>Previous Submissions</h1>
+    <table>
+      <th>ID</th>
+      <th>Status</th>
+      <% @attempts.each do |att| %>
+        <tr>
+          <td><%=att.id%></td>
+          <td><%=att.status%></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+      
+

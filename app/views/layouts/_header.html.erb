@@ -1,0 +1,33 @@
+<div id="login">
+  <%if session[:user]%>
+    <%= link_to session[:user].username, "/users/#{session[:user].id}"  %>
+    <% if session[:user].is_admin %>
+      |
+      <%= link_to "New Problem", new_problem_path %>
+    <% end %>
+    |
+    <%= link_to "Logout?", logins_path, :method => :delete %>
+
+  <%else%>
+    <span id="login-button"><%= link_to 'Login?',  new_login_path%> | <%= link_to 'Sign-up', new_user_path %></span>
+  <% end %>
+</div>
+<div id="header">
+  <span id="title">/dev/comp</span>
+  <nav>
+  <ul>
+    <li><%= link_to 'Home',  root_path %></li>
+    <li><%= link_to 'Problems', problems_path %></li>
+    <% if !session[:user].nil? and session[:user].is_admin %>
+      <li><%= link_to 'Waiting Submissions', waiting_problem_attempts_path %></li>
+    <% end %>
+  </ul>
+  </nav>
+</div>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice]%></div>
+<% end %>
+<% if flash[:error] %>
+  <div class="error"><%= flash[:error]%></div>
+<% end %>

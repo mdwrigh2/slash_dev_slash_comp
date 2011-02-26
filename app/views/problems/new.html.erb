@@ -1,0 +1,28 @@
+<%= form_for(@problem) do |f| %>
+  <% if @problem.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@problem.errors.count, "error") %> prohibited this problem from being created:</h2>
+      <ul>
+        <% @problem.errors.full_messages.each do |msg| %>
+          <li> <%=msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %> <br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %> <br />
+    <%= f.text_area :description, :size => "100x30" %>
+  </div>
+  <div class="field">
+    <%= f.label :example %> <br />
+    <%= f.text_area :example, :size => "100x30" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

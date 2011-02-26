@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   def index
-    if session[:user]
-      redirect_to(@user)
+    
+
+    if !session[:user].nil? and session[:user].is_admin
+      @users = User.all
+    else
+      redirect_to(root_path)
     end
+
   end
 
   def new

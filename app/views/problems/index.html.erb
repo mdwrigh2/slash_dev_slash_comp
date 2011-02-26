@@ -1,0 +1,5 @@
+<%= render :partial => 'problems', :object => @problems %>
+<% if @problems.empty? %>
+  <h1>I can haz problems?</h1>
+  There are no problems here. They probably have not been released yet, so stay tuned.
+<% end %>

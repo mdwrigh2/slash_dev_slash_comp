@@ -3,7 +3,7 @@ class AddVisibleToProblems < ActiveRecord::Migration
     change_table :problems do |t|
       t.boolean :visible, :default => false
     end
-    User.update_all ["visible = ?", false]
+    Problem.update_all ["visible = ?", false]
   end
 
   def self.down

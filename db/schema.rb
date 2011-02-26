@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110225224712) do
+ActiveRecord::Schema.define(:version => 20110226081214) do
 
   create_table "problem_attempts", :force => true do |t|
     t.string   "status"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20110225224712) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "filename"
+    t.string   "filetype"
   end
 
   create_table "problems", :force => true do |t|
@@ -27,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110225224712) do
     t.text     "example"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "visible",     :default => false
   end
 
   create_table "users", :force => true do |t|
