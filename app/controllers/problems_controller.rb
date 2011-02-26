@@ -1,5 +1,8 @@
 class ProblemsController < ApplicationController
   def index
+    if !session[:user]
+      redirect_to(logins_path, :error => "Must be logged in to view problems")
+    end
     if session[:user].is_admin
       redirect_to(all_problems_path)
       return
