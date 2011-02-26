@@ -25,6 +25,9 @@ class ProblemAttemptsController < ApplicationController
     end
   end
 
+  def leaderboard
+    @attempts = ProblemAttempt.find_all_by_status('Success'])
+  end
   def edit
     if !session[:user].is_admin?
       return redirect_to(root_path, :error => "Must be admin to edit problem status")

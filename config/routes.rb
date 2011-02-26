@@ -1,5 +1,6 @@
 SlashDevSlashComp::Application.routes.draw do
   get "home/index"
+  get "home/faq"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -11,6 +12,7 @@ SlashDevSlashComp::Application.routes.draw do
   resources :problem_attempts do
     collection do
       get 'waiting'
+      get 'leaderboard'
     end
     member do
       get 'download'
