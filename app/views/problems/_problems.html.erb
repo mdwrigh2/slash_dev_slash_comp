@@ -1,5 +1,5 @@
 <div class="problems">
   <% problems.each_with_index do |problem,index| %>
-    <h2><%= link_to("#{index+1} - #{problem.title}", problem_path(problem)) %></h2>
+    <h1><%= link_to("#{index+1} - #{problem.title}", problem_path(problem)) %></h1>
   <% end %>
 </div>

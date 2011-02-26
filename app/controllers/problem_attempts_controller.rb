@@ -25,9 +25,6 @@ class ProblemAttemptsController < ApplicationController
     end
   end
 
-  def leaderboard
-    @attempts = ProblemAttempt.find_all_by_status('Success'])
-  end
   def edit
     if !session[:user].is_admin?
       return redirect_to(root_path, :error => "Must be admin to edit problem status")
@@ -41,6 +38,7 @@ class ProblemAttemptsController < ApplicationController
     end
     @attempt = ProblemAttempt.find(params[:id])
     @attempt.status = params[:status]
+    @attempts = ProblemAttempt.where(["user_id=? AND problem_id = ? AND status = ?", session[:user].id, @attempt.problem.id, "Success"])
     respond_to do |format|
       if @attempt.save
         format.html { redirect_to((waiting_problem_attempts_path), :notice => 'Problem attempt updated')}

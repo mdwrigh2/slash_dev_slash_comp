@@ -18,6 +18,7 @@
   <ul>
     <li><%= link_to 'Home',  root_path %></li>
     <li><%= link_to 'Problems', problems_path %></li>
+    <li><%= link_to 'Leaderboard', leaderboard_users_path %></li>
     <% if !session[:user].nil? and session[:user].is_admin %>
       <li><%= link_to 'Waiting Submissions', waiting_problem_attempts_path %></li>
     <% end %>

@@ -6,13 +6,15 @@ SlashDevSlashComp::Application.routes.draw do
   # first created -> highest priority.
 
   resources :users do
+    collection do
+      get 'leaderboard'
+    end
     resources :problem_attempts
   end
 
   resources :problem_attempts do
     collection do
       get 'waiting'
-      get 'leaderboard'
     end
     member do
       get 'download'

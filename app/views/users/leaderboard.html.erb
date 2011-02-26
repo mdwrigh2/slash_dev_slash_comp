@@ -1,0 +1,10 @@
+<table>
+  <th>User</th>
+  <th>Number Solved</th>
+  <% @sorted_users.each do |user| %>
+    <tr>
+      <td><%=user[1].username%></td>
+      <td><%=user[0]%></td>
+    </tr>
+  <% end %>
+</table>

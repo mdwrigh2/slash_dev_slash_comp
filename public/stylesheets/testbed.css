@@ -73,6 +73,9 @@ h1 {
   font-family: Georgia, verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
 #content h1 {
@@ -191,6 +194,7 @@ body {
 
 .notice {
   color: green;
+  padding-left: 30px;
 }
 
 table {
@@ -198,10 +202,13 @@ table {
 }
 td { 
   padding: 7px;
+  text-align:center;
+  font-size: 14px;
 }
 th {
   padding-left:3px;
   padding-right:3px;
+  font-size: 15px;
 }
 
 #results {

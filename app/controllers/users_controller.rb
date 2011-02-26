@@ -1,12 +1,32 @@
 class UsersController < ApplicationController
   def index
-    
-
     if !session[:user].nil? and session[:user].is_admin
       @users = User.all
     else
       redirect_to(root_path)
     end
+  end
+
+  def leaderboard
+    @users = User.all
+    @sorted_users = []
+    @users.each do |user|
+      store = []
+      successes = ProblemAttempt.where(['user_id = ? AND status = ?', user.id, 'Success'])
+      s = 0
+      successes.each do |succ|
+        if !store[succ.problem.id]
+          store[succ.problem.id] = 1
+          s += 1
+        end
+      end
+      @sorted_users << [s, user]
+    end
+    @sorted_users.sort! do |a,b|
+      a[0] <=> b[0]
+    end
+    
+    @sorted_users.reverse!
 
   end
 
