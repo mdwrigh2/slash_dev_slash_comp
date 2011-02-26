@@ -190,6 +190,7 @@ body {
 
 .error {
   color: red;
+  padding-left: 30px;
 }
 
 .notice {
