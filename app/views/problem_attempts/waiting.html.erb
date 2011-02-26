@@ -1,0 +1,20 @@
+<% if !@attempts.empty? %>
+  <div class="attempts">
+    <table>
+      <th>ID</th>
+      <th>Problem</th>
+      <th>User</th>
+      <th>Download</th>
+      <% @attempts.each do |attempt| %>
+        <tr>
+          <td><%=link_to attempt.id, edit_problem_attempt_path(attempt.id)%></td>
+          <td><%=attempt.problem.title%></td>
+          <td><%=attempt.user.username%></td>
+          <td><%= button_to("Download", {:action => "download", :id => attempt.id}, :method => 'get')%></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% else %>
+  <h1>No submissions waiting!</h1><h2>Way to go!</h2>
+<% end %>

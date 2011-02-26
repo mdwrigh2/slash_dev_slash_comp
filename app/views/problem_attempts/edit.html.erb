@@ -1,0 +1,11 @@
+  <h1> Problem - <%= @attempt.problem.title %></h1>
+  <h1> Group - <%= @attempt.user.username %></h1>
+  <br />
+  <h2> ID - <%=@attempt.id%></h2>
+  <br />
+
+  <h2><%= button_to("Download", {:action => "download", :id => @attempt.id}, :method => 'get')%></h2>
+<% form_tag problem_attempt_path(@attempt), :method => :put do %>
+  <%= select_tag(:status, options_for_select([['Waiting', 'Waiting'],['Incorrect Output','Incorrect Output'],['Compile Error', 'Compiler Error'],['Exception Thrown', 'Exception Thrown'], ['Success', 'Success']])) %> <br /> <br />
+  <%= submit_tag "Update Attempt" %>
+<% end %>
