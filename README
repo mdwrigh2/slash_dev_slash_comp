@@ -1,6 +1,6 @@
-/dev/comp is a pretty basic programming competition website that I hacked out in < 24 hours (competition day really sneak up on you...)
+/dev/comp is a pretty basic programming competition website that I hacked out in < 24 hours (competition day really sneaks up on you...)
 
-It's a pretty standard rails app. There's a default admin account in the seed file, but no way to make an account an admin account at the moment short of modifying the DB. Admins can post new problems, which are defaulted to hidden. Looking at the problem index will allow you hide and unhide each of the problems. Admins can see all of the uploaded user attempts and, more specifically, all of the ones waiting for review. The attempts are downloadable from the site.
+There's a default admin account in the seed file, but no way to make an account an admin account at the moment short of modifying the DB. Admins can post new problems, which are defaulted to hidden. Looking at the problem index will allow you hide and unhide each of the problems. Admins can see all of the uploaded user attempts and, more specifically, all of the ones waiting for review. The attempts are downloadable from the site.
 
 Users can see all of the visible problems, and upload their code attempts (if it's a multifile attempt, just have them zip/tar and upload). 
 
